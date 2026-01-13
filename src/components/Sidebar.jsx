@@ -13,17 +13,20 @@ const Sidebar = ({
     soundEnabled,
     toggleSound,
     playerName,
-    setPlayerName
+    setPlayerName,
+    isMobileMenu = false
 }) => {
     return (
-        <aside className="bg-slate-900/40 backdrop-blur-xl p-6 rounded-3xl w-full xl:w-full shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/5 flex flex-col gap-5 relative h-full group hover:border-blue-500/20 transition-all duration-500 overflow-hidden">
+        <aside className={`bg-slate-900/40 backdrop-blur-xl p-6 rounded-3xl w-full xl:w-full shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/5 flex flex-col gap-5 relative h-full group hover:border-blue-500/20 transition-all duration-500 overflow-hidden ${isMobileMenu ? 'bg-transparent border-none shadow-none p-0' : ''}`}>
             {/* Ambient Background Light */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none"></div>
+            {!isMobileMenu && <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none"></div>}
 
-            <h2 className="text-xs font-black text-blue-400/80 uppercase tracking-widest mb-1 flex items-center gap-2 relative z-10">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                Command Panel
-            </h2>
+            {!isMobileMenu && (
+                <h2 className="text-xs font-black text-blue-400/80 uppercase tracking-widest mb-1 flex items-center gap-2 relative z-10">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    Command Panel
+                </h2>
+            )}
 
 
 

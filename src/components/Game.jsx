@@ -13,7 +13,7 @@ import WinnerModal from './WinnerModal';
 const Game = ({ game, soundEnabled, toggleSound, playerName, setPlayerName }) => {
 
     return (
-        <div className="w-full flex-1 flex flex-col items-center justify-center p-2 sm:p-4 md:p-8 bg-transparent overflow-hidden relative">
+        <div className="w-full flex-1 flex flex-col items-center justify-start sm:justify-center p-2 sm:p-4 md:p-8 bg-transparent overflow-hidden relative">
             <Toaster
                 position="bottom-center"
                 reverseOrder={false}
@@ -42,6 +42,7 @@ const Game = ({ game, soundEnabled, toggleSound, playerName, setPlayerName }) =>
                 <motion.h1
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] text-center font-sans"
                 >
                     TIC <span className="text-blue-500"> BOX </span>
@@ -89,10 +90,11 @@ const Game = ({ game, soundEnabled, toggleSound, playerName, setPlayerName }) =>
 
                 {/* Center Panel: Main Game Board */}
                 <motion.div
+                    layout
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex flex-col items-center justify-center gap-6 order-1 lg:order-2 py-0"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    className="flex flex-col items-center justify-center gap-6 order-1 lg:order-2 py-0 w-full"
                 >
                     <div className="relative group mt-2">
                         <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>

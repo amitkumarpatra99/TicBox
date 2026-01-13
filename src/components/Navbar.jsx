@@ -113,6 +113,7 @@ const Navbar = (props) => {
                                 toggleSound={props.toggleSound}
                                 playerName={props.playerName}
                                 setPlayerName={props.setPlayerName}
+                                isMobileMenu={true}
                             />
                         </div>
                     </motion.div>

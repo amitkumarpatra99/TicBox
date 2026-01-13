@@ -7,9 +7,13 @@ const Cell = ({ value, onClick, disabled, isWin }) => {
         if (type === 'X') {
             return (
                 <motion.svg
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    initial={{ pathLength: 0, opacity: 0, scale: 0.5 }}
+                    animate={{ pathLength: 1, opacity: 1, scale: 1 }}
+                    transition={{
+                        pathLength: { duration: 0.4, ease: "circOut" },
+                        opacity: { duration: 0.2 },
+                        scale: { type: "spring", stiffness: 260, damping: 20 }
+                    }}
                     viewBox="0 0 100 100"
                     className="w-12 h-12 md:w-16 md:h-16"
                     style={{ filter: "drop-shadow(0 0 8px rgba(34,211,238,0.8)) drop-shadow(0 0 15px rgba(34,211,238,0.4))" }}
@@ -28,7 +32,7 @@ const Cell = ({ value, onClick, disabled, isWin }) => {
             <motion.svg
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 viewBox="0 0 100 100"
                 className="w-12 h-12 md:w-16 md:h-16"
                 style={{ filter: "drop-shadow(0 0 8px rgba(217,70,239,0.8)) drop-shadow(0 0 15px rgba(217,70,239,0.4))" }}
