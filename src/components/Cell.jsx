@@ -48,10 +48,13 @@ const Cell = ({ value, onClick, disabled, isWin }) => {
             whileHover={!value && !disabled ? { scale: 1.02, boxShadow: "0 0 15px rgba(59, 130, 246, 0.2)" } : {}}
             whileTap={!value && !disabled ? { scale: 0.98 } : {}}
             className={`
-                w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center rounded-2xl transition-all duration-300
-                backdrop-blur-md relative overflow-hidden group border
-                ${value ? 'cursor-default' : 'cursor-pointer hover:bg-white/[0.02]'}
-                ${isWin ? 'bg-cyan-500/10 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.3)]' : 'bg-black/40 border-white/10 shadow-lg hover:border-white/15'}
+                w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center rounded-xl transition-all duration-300
+                backdrop-blur-md relative overflow-hidden group border-2
+                ${value ? 'cursor-default' : 'cursor-pointer hover:bg-white/[0.03] active:scale-95'}
+                ${isWin
+                    ? 'bg-cyan-500/20 border-cyan-400/50 shadow-[0_0_50px_rgba(34,211,238,0.4)] z-10'
+                    : 'bg-slate-800/40 border-white/5 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.05)] hover:border-white/20 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]'
+                }
             `}
             onClick={!disabled ? onClick : undefined}
         >
