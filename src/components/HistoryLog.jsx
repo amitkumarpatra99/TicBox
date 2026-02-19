@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaClipboardList } from 'react-icons/fa';
 
 const HistoryLog = ({ history }) => {
     return (
@@ -7,7 +8,7 @@ const HistoryLog = ({ history }) => {
             <AnimatePresence>
                 {history.length === 0 ? (
                     <div className="flex flex-col items-center justify-center h-full text-slate-500 gap-2 opacity-50">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <FaClipboardList className="text-3xl" />
                         <p className="text-xs font-medium">AWAITING GAME DATA</p>
                     </div>
                 ) : (
@@ -16,7 +17,7 @@ const HistoryLog = ({ history }) => {
                             key={index}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="flex justify-between items-center p-3 rounded-xl bg-slate-800/30 border border-white/5 text-xs font-mono relative overflow-hidden"
+                            className="flex justify-between items-center p-3 rounded-xl bg-slate-800/20 backdrop-blur-sm border border-white/5 text-xs font-mono relative overflow-hidden"
                         >
                             <div className={`absolute w-1 h-full left-0 top-0 ${match.result === 'win' ? 'bg-blue-500' : match.result === 'loss' ? 'bg-red-500' : 'bg-slate-500'}`}></div>
                             <span className="font-bold text-slate-300 ml-2">MATCH_{String(index + 1).padStart(3, '0')}</span>

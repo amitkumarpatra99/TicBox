@@ -28,7 +28,7 @@ const Navbar = (props) => {
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 shadow-2xl shadow-blue-900/20 w-full max-w-5xl flex items-center justify-between"
+                className="bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 shadow-2xl shadow-blue-900/20 w-full max-w-5xl flex items-center justify-between"
             >
                 {/* Logo */}
                 <div className="flex items-center gap-2">

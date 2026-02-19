@@ -3,7 +3,7 @@ import Cell from './Cell';
 
 const Board = ({ cells, onCellClick, winData }) => {
     return (
-        <div className="relative p-6 bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl">
+        <div className="relative p-6 bg-slate-900/60 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-2xl">
             {/* Decorative Screws */}
             <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-slate-700 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] border border-slate-600"></div>
             <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-slate-700 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] border border-slate-600"></div>

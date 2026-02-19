@@ -19,9 +19,9 @@ export default function App() {
     <div className="min-h-screen bg-[#020617] flex flex-col items-center text-white relative overflow-hidden font-sans selection:bg-cyan-500/30">
       {/* Dynamic Background Effects */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-blue-600/10 blur-[130px] rounded-full mix-blend-screen animate-pulse duration-[4000ms]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-600/5 blur-[120px] rounded-full mix-blend-screen animate-pulse duration-[6000ms]"></div>
-        <div className="absolute top-[20%] left-[50%] w-[30vw] h-[30vw] bg-indigo-600/5 blur-[100px] rounded-full mix-blend-screen"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-blue-600/20 blur-[130px] rounded-full mix-blend-screen animate-pulse duration-[4000ms]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-600/10 blur-[120px] rounded-full mix-blend-screen animate-pulse duration-[6000ms]"></div>
+        <div className="absolute top-[20%] left-[50%] w-[30vw] h-[30vw] bg-indigo-600/15 blur-[100px] rounded-full mix-blend-screen"></div>
       </div>
 
       <Navbar

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaStream, FaUndo, FaRedo } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import useSound from '../hooks/useSound';
@@ -72,9 +73,9 @@ const Game = ({ game, soundEnabled, toggleSound, playerName, setPlayerName }) =>
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="flex flex-col gap-6 order-2 lg:order-1 h-full"
                 >
-                    <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 p-6 rounded-3xl shadow-2xl flex flex-col gap-4 h-full">
+                    <div className="bg-slate-900/50 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl shadow-2xl flex flex-col gap-4 h-full">
                         <h2 className="text-xs font-black text-blue-400/80 uppercase tracking-widest flex items-center gap-2 mb-2">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            <FaStream className="text-sm" />
                             Data Stream
                         </h2>
                         <ScoreBoard scores={game.scores} playerName={playerName} />
@@ -112,14 +113,14 @@ const Game = ({ game, soundEnabled, toggleSound, playerName, setPlayerName }) =>
                             onClick={game.undo}
                             disabled={!game.isHumanTurn && !game.gameOver}
                         >
-                            <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
+                            <FaUndo className={`text-lg group-hover:-translate-x-1 transition-transform`} />
                             Undo
                         </button>
                         <button
                             className="flex-1 py-3 px-4 rounded-xl font-bold text-slate-400 bg-slate-900/40 hover:bg-slate-800/60 hover:text-white transition-all border border-white/10 hover:border-white/20 shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2 group backdrop-blur-md"
                             onClick={game.resetGame}
                         >
-                            <svg className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            <FaRedo className={`text-lg group-hover:rotate-180 transition-transform duration-500`} />
                             New Round
                         </button>
                     </div>

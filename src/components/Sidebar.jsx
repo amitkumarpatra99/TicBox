@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMicrochip, FaChevronDown, FaVolumeUp, FaVolumeMute, FaTrashAlt } from 'react-icons/fa';
 
 const Sidebar = ({
     onNewGame,
@@ -17,13 +18,13 @@ const Sidebar = ({
     isMobileMenu = false
 }) => {
     return (
-        <aside className={`bg-slate-900/40 backdrop-blur-xl p-6 rounded-3xl w-full xl:w-full shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/5 flex flex-col gap-5 relative h-full group hover:border-blue-500/20 transition-all duration-500 overflow-hidden ${isMobileMenu ? 'bg-transparent border-none shadow-none p-0' : ''}`}>
+        <aside className={`bg-slate-900/50 backdrop-blur-2xl p-6 rounded-3xl w-full xl:w-full shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/5 flex flex-col gap-5 relative h-full group hover:border-blue-500/20 transition-all duration-500 overflow-hidden ${isMobileMenu ? 'bg-transparent border-none shadow-none p-0' : ''}`}>
             {/* Ambient Background Light */}
             {!isMobileMenu && <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none"></div>}
 
             {!isMobileMenu && (
                 <h2 className="text-xs font-black text-blue-400/80 uppercase tracking-widest mb-1 flex items-center gap-2 relative z-10">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    <FaMicrochip className="text-sm" />
                     Command Panel
                 </h2>
             )}
@@ -77,7 +78,7 @@ const Sidebar = ({
                             <option value="3">Unbeatable (God)</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <FaChevronDown />
                         </div>
                     </div>
                 </div>
@@ -109,12 +110,12 @@ const Sidebar = ({
                         >
                             {soundEnabled ? (
                                 <>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                                    <FaVolumeUp className="text-lg" />
                                     <span>ON</span>
                                 </>
                             ) : (
                                 <>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                    <FaVolumeMute className="text-lg" />
                                     <span>OFF</span>
                                 </>
                             )}
@@ -124,7 +125,7 @@ const Sidebar = ({
                             className="h-[54px] rounded-xl font-bold text-sm text-red-400 bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 hover:shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300 flex items-center justify-center gap-2"
                             onClick={onResetScores}
                         >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            <FaTrashAlt className="text-sm" />
                             Purge Data
                         </button>
                     </div>
