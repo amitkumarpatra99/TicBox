@@ -1,4 +1,4 @@
-# ⚡ TIC BOX
+# ⚡ TIC BOX - TIC TAC TOE GAME
 
 <div align="center">
   <h3>A Futuristic, AI-Powered Tic Tac Toe Experience</h3>
